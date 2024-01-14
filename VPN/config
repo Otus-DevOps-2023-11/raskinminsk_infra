@@ -1,9 +1,0 @@
-Host bastion
-    Hostname 178.154.202.169
-    user appuser
-    ForwardAgent yes
-
-Host appuser
-    Hostname 10.128.0.13
-    user appuser
-    ForwardAgent yes
