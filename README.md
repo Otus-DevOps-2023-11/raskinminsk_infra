@@ -89,3 +89,8 @@ yc compute instance create \
   --network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4 \
   --metadata-from-file user-data=/home/raskin/raskinminsk_infra/cloud-init.yml \
   --metadata serial-port-enable=1 \
+
+
+# Home work 7
+# При помощи PACKER создан образ "reddit-base-1705228375" и запущена виртуальная машина
+# После деплоя приложения reddit проверка в браузере -  http://84.252.130.103:9292
