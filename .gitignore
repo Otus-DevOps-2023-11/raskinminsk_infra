@@ -5,3 +5,6 @@ terraform/*.tfstate.backup
 terraform/*.tfvars
 terraform/.terraform/
 terraform_backup/
+packer/*.backup
+terraform/*.backup
+*.backup
