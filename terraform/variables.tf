@@ -6,7 +6,7 @@ variable "folder_id" {
 }
 variable "zone" {
   description = "Default Zone"
-  default = "ru-central1-a"
+  default     = "ru-central1-a"
 }
 variable "public_key_path" {
   description = "Path to the public key for ssh connect"

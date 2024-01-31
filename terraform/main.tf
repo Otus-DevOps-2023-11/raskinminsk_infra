@@ -1,17 +1,28 @@
-#terraform {
-#  required_providers {
-#    yandex = {
-#      source = "yandex-cloud/yandex"
-#    }
-#  }
-#  required_version = ">= 0.13"
-#}
+terraform {
+  required_providers {
+    yandex = {
+      source = "yandex-cloud/yandex"
+    }
+  }
+  required_version = ">= 0.13"
+}
 
 provider "yandex" {
   service_account_key_file = var.service_account_key_file
-  cloud_id = var.cloud_id
-  folder_id = var.folder_id
-  zone = var.zone
+  cloud_id                 = var.cloud_id
+  folder_id                = var.folder_id
+  zone                     = var.zone
+}
+
+resource "yandex_vpc_network" "app-network" {
+  name = "reddit-app-network"
+}
+
+resource "yandex_vpc_subnet" "app-subnet" {
+  name           = "reddit-app-subnet"
+  zone           = "ru-central1-a"
+  network_id     = yandex_vpc_network.app-network.id
+  v4_cidr_blocks = ["192.168.10.0/24"]
 }
 
 resource "yandex_compute_instance" "app" {
@@ -31,7 +42,7 @@ resource "yandex_compute_instance" "app" {
 
   network_interface {
     # id подсети default-ru-central1-a
-    subnet_id = var.subnet_id
+    subnet_id = yandex_vpc_subnet.app-subnet.id
     nat       = true
   }
 
@@ -46,14 +57,5 @@ resource "yandex_compute_instance" "app" {
     agent = true
     # приватный ключ не используется, подключение через ssh-agent)
     # private_key = var.private_key
-  }
-
-  provisioner "file" {
-    source = "files/puma.service"
-    destination = "/tmp/puma.service"
-  }
-
-  provisioner "remote-exec" {
-    script = "files/deploy.sh"
   }
 }
