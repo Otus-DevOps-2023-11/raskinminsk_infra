@@ -2,9 +2,9 @@
     "builders": [
         {
             "type": "yandex",
-            "service_account_key_file": "/home/raskin/key.json",
-            "folder_id": "b1gtppfap19rcjbm2f9r",
-            "source_image_family": "ubuntu-1604-lts",
+            "service_account_key_file": "{{ user `sa_key_file` }}",
+            "folder_id": "{{ user `folder_id` }}",
+            "source_image_family": "{{ user `source_image_id` }}",
             "image_name": "reddit-app-{{timestamp}}",
             "image_family": "reddit-base",
             "ssh_username": "ubuntu",
