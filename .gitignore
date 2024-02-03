@@ -4,3 +4,16 @@ terraform/*.tfstate.*.backup
 terraform/*.tfstate.backup
 terraform/*.tfvars
 terraform/.terraform/
+terraform/prod/.terraform/
+terraform/stage/.terraform/
+terraform/prod/*.tfvars
+terraform/prod/*.tfstate
+terraform/prod/*.tfstate.backup
+terraform/stage/*.tfvars
+terraform/stage/*.tfstate
+terraform/stage/*.tfstate.backup
+terraform_backup/
+packer/*.backup
+terraform/*.backup
+terraform/backup/
+*.backup
