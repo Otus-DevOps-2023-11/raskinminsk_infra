@@ -17,3 +17,4 @@ packer/*.backup
 terraform/*.backup
 terraform/backup/
 *.backup
+*.retry
