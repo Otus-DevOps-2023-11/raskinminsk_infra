@@ -117,3 +117,12 @@ yc compute instance create \
 # Выполнены различные модули на инфраструктуре подготовленной в прошлых ДЗ.
 # Написан скрипт, генерирующий JSON файл для inventory Ansible.
 # В файле ansible.cfg сделаны настройки для работы с JSON-inventory.
+
+# ДЗ ansible-2
+# Создан плейбук reddit_app_one_play.yml, один сценарий
+# Создан плейбук reddit_app_multiple_plays.yml, несколько сценарий.
+# Несколько плейбуков app.yml, db.yml, deploy.yml.
+# Импорт плейбуков в один плейбук - site.yml.
+# Изменён провижн образов Packer на плейбуки:
+#   - packer/app.json, packer/db.json
+#   - packer/ansible/packer_app.yml и packer/ansible/packer_db.yml

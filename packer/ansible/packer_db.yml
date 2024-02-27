@@ -1,0 +1,14 @@
+---
+- name: Install MongoDB 3.2
+  hosts: all
+  become: true
+  tasks:
+    - name: Install mongodb package
+      apt:
+        name: mongodb
+        state: present
+
+    - name: Configure service supervisor
+      systemd:
+        name: mongodb
+        enabled: yes
