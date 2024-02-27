@@ -16,6 +16,10 @@
         {
             "type": "shell",
             "inline":  ["sleep 60"]
+        },
+        {
+           "type": "ansible",
+           "playbook_file": "ansible/packer_app.yml"
         }
     ]
 }
