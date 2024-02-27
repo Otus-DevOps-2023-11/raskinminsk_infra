@@ -5,7 +5,7 @@
             "service_account_key_file": "{{ user `sa_key_file` }}",
             "folder_id": "{{ user `folder_id` }}",
             "source_image_family": "{{ user `source_image_id` }}",
-            "image_name": "reddit-db-{{timestamp}}",
+            "image_name": "reddit-db-a2",
             "image_family": "reddit-base",
             "ssh_username": "ubuntu",
             "platform_id": "standard-v1",
