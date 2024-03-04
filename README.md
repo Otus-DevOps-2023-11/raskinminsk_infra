@@ -126,3 +126,9 @@ yc compute instance create \
 # Изменён провижн образов Packer на плейбуки:
 #   - packer/app.json, packer/db.json
 #   - packer/ansible/packer_app.yml и packer/ansible/packer_db.yml
+
+# ДЗ ansible-3
+# Перенесены созданные плейбуки в раздельные роли app и db
+# Описано два окружения prod и stage
+# Использована коммьюнити роль nginx
+# Использован Ansible Vault для наших окружений
