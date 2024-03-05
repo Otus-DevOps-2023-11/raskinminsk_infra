@@ -19,5 +19,4 @@ terraform/backup/
 *backup.*
 *.backup
 *.retry
-/ansible/roles/jdauphant.nginx
 /ansible/vault.key
